@@ -1,112 +1,71 @@
 
 
-<div class="card mb-3">
 
-    <div class="row">
-        <div class="col-md-3">
-            <img src="../../../assets/img/1.jpeg" class="img-fluid rounded-start" alt="">
-        </div>
 
-        <div class="col-md-9">
-            <div class="card-body">
-                <h2 class="card-title">Film 1</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, explicabo.</p>
-                <button class="btn btn-sm btn-outline-primary">
-                    Details
-                </button>
-            </div>
-        </div>
+<div *ngIf="movies.length > 0; else empyTemplate">
+
+    <h1 class="" *ngIf="movies.length > 0; else empyTemplate">{{title}}</h1>
+    <div  class="alert alert-success"> {{movies.length}} adet film bulundu </div>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="filterText" />
+        <small class="text-muted" *ngIf="filterText">Aradığınız Kelime: {{filterText}}</small>
     </div>
-
+    
+    <!-- <ng-template [ngTemplateOutlet]="movieList2" [ngTemplateOutletContext]="{ movies: popularMovies} "></ng-template> -->
+    <ng-template [ngTemplateOutlet]="movieList" [ngTemplateOutletContext]="{filterText: filterText}"></ng-template>
     
 </div>
 
 
-<div class="card mb-3">
 
-    <div class="row">
-        <div class="col-md-3">
-            <img src="../../../assets/img/2.jpeg" class="img-fluid rounded-start" alt="">
-        </div>
-
-        <div class="col-md-9">
-            <div class="card-body">
-                <h2 class="card-title">Film 1</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, explicabo.</p>
-                <button class="btn btn-sm btn-outline-primary">
-                    Details
-                </button>
+<ng-template #movieList>
+    <div class="card mb-3" *ngFor="let movie of movies | moviefilter: filterText">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="../../../assets/img/{{movie.imageUrl}}" class="img-fluid rounded-start" alt="">
             </div>
+    
+            <div class="col-md-9">
+                <div class="card-body">
+                    <h2 class="card-title">{{movie.title | titlecase}}</h2>
+                    <p class="card-text">{{movie.description | summary : 30}}</p>
+                    <p>{{movie.datePublished | date: 'dd/MM/y' }}</p>
+                    <button class="btn btn-sm btn-outline-primary">
+                        Details
+                    </button>
+                </div>
+            </div>
+        </div>        
+    </div>
+</ng-template>
+
+
+<ng-template #movieList2 let-movies="movies">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+        <div class="col" *ngFor="let movie of movies">
+            <div class="card h-100">
+                <img src="/assets/img/{{ movie.imageUrl }} " alt="movie.title" class="card-img-top" >
+                <div class="card-body">
+                    <div class="card-title">
+                        {{movie.title}}
+                    </div>
+                    <div class="card-text">{{movie.description}}</div>
+                </div>
+            </div>
+
         </div>
     </div>
-
     
-</div>
+</ng-template>
+
+<ng-template #empyTemplate>
+    <div class="alert alert-warning">Film Bulunamadı</div>
+</ng-template>
 
 
-<div class="card mb-3">
-
-    <div class="row">
-        <div class="col-md-3">
-            <img src="../../../assets/img/3.jpeg" class="img-fluid rounded-start" alt="">
-        </div>
-
-        <div class="col-md-9">
-            <div class="card-body">
-                <h2 class="card-title">Film 1</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, explicabo.</p>
-                <button class="btn btn-sm btn-outline-primary">
-                    Details
-                </button>
-            </div>
-        </div>
-    </div>
-
-    
-</div>
 
 
-<div class="card mb-3">
 
-    <div class="row">
-        <div class="col-md-3">
-            <img src="../../../assets/img/4.jpeg" class="img-fluid rounded-start" alt="">
-        </div>
-
-        <div class="col-md-9">
-            <div class="card-body">
-                <h2 class="card-title">Film 1</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, explicabo.</p>
-                <button class="btn btn-sm btn-outline-primary">
-                    Details
-                </button>
-            </div>
-        </div>
-    </div>
-
-    
-</div>
-
-
-<div class="card mb-3">
-
-    <div class="row">
-        <div class="col-md-3">
-            <img src="../../../assets/img/5.jpeg" class="img-fluid rounded-start" alt="">
-        </div>
-
-        <div class="col-md-9">
-            <div class="card-body">
-                <h2 class="card-title">Film 1</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, explicabo.</p>
-                <button class="btn btn-sm btn-outline-primary">
-                    Details
-                </button>
-            </div>
-        </div>
-    </div>
-
-    
-</div>
-
+<app-movie *ngFor="let movie of movies"></app-movie>
 
