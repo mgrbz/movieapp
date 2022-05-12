@@ -11,17 +11,36 @@ export class MoviesComponent implements OnInit {
 
   movies: IMovie[];
   movieRepository: MovieRepository;
-  popularMovies: IMovie[];
+  filteredMovies: IMovie[];
   title = 'Film Listesi';
   filterText: string = ""
 
   constructor() {
     this.movieRepository = new MovieRepository();
     this.movies = this.movieRepository.getMovies();
-    this.popularMovies = this.movieRepository.getPopularMovies()
+    this.filteredMovies = this.movies;
    }
 
   ngOnInit(): void {
+  }
+
+  onInputChange() {
+    this.filteredMovies = this.filterText ? 
+      this.movies.filter(m => m.title.toLowerCase().indexOf(this.filterText.toLowerCase()) !== -1 || 
+                              m.description.toLowerCase().indexOf(this.filterText.toLowerCase()) !== -1 ) : this.movies;
+  }
+
+  AddToList($event: any, movie: IMovie){
+    console.log('movie : ', $event?.target)
+    if($event.target.classList.contains('btn-primary')) {
+      $event.target.innerText = "Listeden Çıkar";
+      $event.target.classList.remove('btn-primary');
+      $event.target.classList.add('btn-danger');
+    } else if($event.target.classList.contains('btn-danger')){
+      $event.target.innerText = "Listeye Ekle";
+      $event.target.classList.remove('btn-danger');
+      $event.target.classList.add('btn-primary');
+    }
   }
 
   // movies = [

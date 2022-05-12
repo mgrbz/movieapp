@@ -8,7 +8,13 @@
     <div  class="alert alert-success"> {{movies.length}} adet film bulundu </div>
 
     <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="filterText" />
+        <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Search" 
+            [(ngModel)]="filterText" 
+            (ngModelChange)="onInputChange()"
+        />
         <small class="text-muted" *ngIf="filterText">Aradığınız Kelime: {{filterText}}</small>
     </div>
     
@@ -20,7 +26,8 @@
 
 
 <ng-template #movieList>
-    <div class="card mb-3" *ngFor="let movie of movies | moviefilter: filterText">
+    <!-- <div class="card mb-3" *ngFor="let movie of movies | moviefilter: filterText"> -->
+    <div class="card mb-3" *ngFor="let movie of filteredMovies">
         <div class="row">
             <div class="col-md-3">
                 <img src="../../../assets/img/{{movie.imageUrl}}" class="img-fluid rounded-start" alt="">
@@ -31,9 +38,11 @@
                     <h2 class="card-title">{{movie.title | titlecase}}</h2>
                     <p class="card-text">{{movie.description | summary : 30}}</p>
                     <p>{{movie.datePublished | date: 'dd/MM/y' }}</p>
-                    <button class="btn btn-sm btn-outline-primary">
-                        Details
-                    </button>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary">Details</button>
+                        <button class="btn btn-sm btn-primary ms-1" (click)="AddToList($event, movie)">Listeye Ekle</button>
+
+                    </div>
                 </div>
             </div>
         </div>        
