@@ -6,7 +6,7 @@ export interface IMovie{
   description: string;
   imageUrl: string;
   isPopular: boolean;
-  datePublished: Date;
+  // datePublished: Date;
 }
 
 export class Movie{

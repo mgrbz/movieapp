@@ -1,0 +1,17 @@
+{
+  "movies": [
+    { "id": 1, "title": "film 1", "imageUrl": "1.jpeg", "isPopular": true, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!" },
+    { "id": 2, "title": "film 2", "imageUrl": "2.jpeg", "isPopular": false, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!" },
+    { "id": 3, "title": "film 3", "imageUrl": "3.jpeg", "isPopular": true, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!" },
+    { "id": 4, "title": "film 4", "imageUrl": "4.jpeg", "isPopular": false, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!" },
+    { "id": 5, "title": "film 5", "imageUrl": "5.jpeg", "isPopular": true, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!" }
+  
+  ],
+  "categories" : [
+    { "id": 1, "name": "Macera" },
+    { "id": 2, "name": "Romantik" },
+    { "id": 3, "name": "Bilim Kurgu" },
+    { "id": 4, "name": "Komedi" },
+    { "id": 5, "name": "Savaş" }
+  ]
+}
