@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AlertifyService } from 'src/services/alertify.service';
 import { MovieService } from 'src/services/movie.service';
 import { IMovie } from 'src/types/movie';
@@ -19,18 +20,26 @@ export class MoviesComponent implements OnInit {
   error: any;
   filterText: string = "";
 
-  constructor(private alertify: AlertifyService, private movieService: MovieService) {
+  constructor(private alertify: AlertifyService, private movieService: MovieService, private activatedRoute: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe(data => {
-      this.movies = data;
-      this.filteredMovies = data;
-      
-    }, error => {
-      this.error = error
+    this.activatedRoute.params.subscribe(param => {
+       let categoryId = param["categoryId"];
+      console.log('movies ActivatedRoot : ', param);
+
+       this.movieService.getMovies(categoryId).subscribe(data => {
+        this.movies = data;
+        this.filteredMovies = data;
+        
+      }, error => {
+        this.error = error
+      })
     })
+
+
+
 
 
   }

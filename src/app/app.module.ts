@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SummaryPipe } from 'src/pipes/summary.pipe';
 import { MovieFilterPipe } from 'src/pipes/moviefilter.pipe';
 import { AlertifyService } from 'src/services/alertify.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [  //components
@@ -29,7 +30,8 @@ import { AlertifyService } from 'src/services/alertify.service';
   imports: [    // Module
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [AlertifyService],  //services
   bootstrap: [AppComponent]   //starter components

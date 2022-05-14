@@ -43,7 +43,7 @@
                     <p class="card-text">{{movie.description | summary : 30}}</p>
                     <!-- <p>{{movie.datePublished | date: 'dd/MM/y' }}</p> -->
                     <div>
-                        <button class="btn btn-sm btn-outline-primary">Details</button>
+                        <a class="btn btn-sm btn-outline-primary" routerLink="/movies/{{movie.id}}">Details</a>
                         <button class="btn btn-sm btn-primary ms-1" (click)="AddToList($event, movie)">Listeye Ekle</button>
 
                     </div>
@@ -75,10 +75,4 @@
 <ng-template #empyTemplate>
     <div class="alert alert-warning">Film Bulunamadı</div>
 </ng-template>
-
-
-
-
-
-<app-movie *ngFor="let movie of movies"></app-movie>
 

@@ -1,15 +1,16 @@
 
 <div class="list-group">
     <a 
+        routerLink="movies"
         href="#" 
         class="list-group-item list-group-item-action" 
         [class.active]="displayAll"
         (click)="onSelectCategory($event)"
     >
         All Categories
-</a>
+    </a>
     <a 
-        href="#" 
+        routerLink="movies/category/{{category.id}}"
         *ngFor="let category of categories;"
         class="list-group-item list-group-item-action" 
         [class.active]="selectedCategory == category"
