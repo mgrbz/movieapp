@@ -1,33 +1,33 @@
 <h1>Create Movie</h1>
 
 
-<form action="">
+<form #form="ngForm" (ngSubmit)="createMovie(form)">
 
   <div class="mb-3">
     <label for="title" class="form-lbel">Title</label>
-    <input #title type="text" name="title" class="form-control">
+    <input type="text" name="title" class="form-control" [(ngModel)]="formModel.title" >
   </div>
 
 
   <div class="mb-3">
     <label for="description" class="form-lbel">Description</label>
-    <textarea #description type="text" name="description" class="form-control"></textarea>
+    <textarea type="text" name="description" class="form-control"  [(ngModel)]="formModel.description"></textarea>
   </div>
 
   <div class="mb-3">
     <label for="imageUrl" class="form-lbel">Image Url</label>
-    <input #imageUrl type="text" name="imageUrl" class="form-control">
+    <input type="text" name="imageUrl" class="form-control"  [(ngModel)]="formModel.imageUrl">
   </div>
 
   <div class="mb-3">
     <label for="categoryId" class="form-lbel">Category</label>
-    <select #categoryId class="form-select">
+    <select class="form-select" name="categoryId" [(ngModel)]="formModel.categoryId">
       <option [value]="-1">Seçiniz</option>
       <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
     </select>
   </div>
 
-  <button class="btn btn-primary" (click)="createMovie(title, description, imageUrl, categoryId)">Create</button>
+  <button type="submit" class="btn btn-primary">Create</button>
 
 </form>
 
