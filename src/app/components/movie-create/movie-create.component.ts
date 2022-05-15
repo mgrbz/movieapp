@@ -26,8 +26,8 @@ export class MovieCreateComponent{
     description: "",
     imageUrl: "",
     isPopular: false,
-    categoryId: 0,
-    datePublished: 0
+    categoryId: -1,
+    datePublished: new Date().getTime()
   };
 
   constructor(
@@ -43,32 +43,17 @@ export class MovieCreateComponent{
     })
   }
 
-  createMovie(form: NgForm) {
+  createMovie() {
 
-    console.log('fromModel : ', this.formModel)
-    console.log('ngForm : ', form.value)
-
-
-
-
-  //   const movie = {
-  //     id: 0,
-  //     title: title.value,
-  //     description: description.value,
-  //     imageUrl: imageUrl.value,
-  //     categoryId: categoryId.value,
-  //     isPopular: false,
-  //     datePublished: new Date().getTime()
-  //   };
-
-  //   this.movieCreateService.createMovie(movie).subscribe(data => {
-  //       // this.router.navigate(['/movies']);
-  //       this.router.navigate([`/movies/${data.id}`]);
-  //     },
-  //     error => {
-  //       this.error = error
-  //     }
-  //   )
+    console.log('formModel', this.formModel)
+    this.movieCreateService.createMovie(this.formModel).subscribe(data => {
+        // this.router.navigate(['/movies']);
+        this.router.navigate([`/movies/${data.id}`]);
+      },
+      error => {
+        this.error = error
+      }
+    )
 
 
   }
