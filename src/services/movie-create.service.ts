@@ -15,7 +15,8 @@ export class MovieCreateService{
   constructor(private http: HttpClient){}
 
 
-  addMovie(movie: IMovie): Observable<any>{
+  createMovie(movie: IMovie): Observable<IMovie>{
+
     return this.http.post<any>(this.url, movie).pipe(
       tap(data => console.log('addMovie data : ', data)),
       catchError(this.handleError)

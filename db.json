@@ -1,17 +1,93 @@
 {
   "movies": [
-    { "id": 1, "title": "film 1", "imageUrl": "1.jpeg", "isPopular": true, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!", "categoryId":1  },
-    { "id": 2, "title": "film 2", "imageUrl": "2.jpeg", "isPopular": false, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!", "categoryId":2  },
-    { "id": 3, "title": "film 3", "imageUrl": "3.jpeg", "isPopular": true, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!", "categoryId":3 },
-    { "id": 4, "title": "film 4", "imageUrl": "4.jpeg", "isPopular": false, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!", "categoryId":4  },
-    { "id": 5, "title": "film 5", "imageUrl": "5.jpeg", "isPopular": true, "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!", "categoryId":5  }
-  
+    {
+      "id": 1,
+      "title": "film 1",
+      "imageUrl": "1.jpeg",
+      "isPopular": true,
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "film 2",
+      "imageUrl": "2.jpeg",
+      "isPopular": false,
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!",
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "title": "film 3",
+      "imageUrl": "3.jpeg",
+      "isPopular": true,
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!",
+      "categoryId": 3
+    },
+    {
+      "id": 4,
+      "title": "film 4",
+      "imageUrl": "4.jpeg",
+      "isPopular": false,
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!",
+      "categoryId": 4
+    },
+    {
+      "id": 5,
+      "title": "film 5",
+      "imageUrl": "5.jpeg",
+      "isPopular": true,
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic odio, esse odit a accusantium reprehenderit repudiandae, voluptas incidunt corrupti molestias tenetur nam atque quidem. Quo, quaerat! Nobis, odit recusandae? Reiciendis!",
+      "categoryId": 5
+    },
+    {
+      "id": 6,
+      "title": "filmtest",
+      "description": "filmtest filmtest filmtest filmtest filmtest filmtest ",
+      "imageUrl": "2.jpeg",
+      "categoryId": "4",
+      "isPopular": false,
+      "datePublished": 1652620396440
+    },
+    {
+      "id": 7,
+      "title": "test2",
+      "description": "test2",
+      "imageUrl": "1.jpeg",
+      "categoryId": "5",
+      "isPopular": false,
+      "datePublished": 1652620547948
+    },
+    {
+      "id": 8,
+      "title": "test3",
+      "description": "test3",
+      "imageUrl": "5.jpeg",
+      "categoryId": "1",
+      "isPopular": false,
+      "datePublished": 1652620644680
+    }
   ],
-  "categories" : [
-    { "id": 1, "name": "Macera" },
-    { "id": 2, "name": "Romantik" },
-    { "id": 3, "name": "Bilim Kurgu" },
-    { "id": 4, "name": "Komedi" },
-    { "id": 5, "name": "Savaş" }
+  "categories": [
+    {
+      "id": 1,
+      "name": "Macera"
+    },
+    {
+      "id": 2,
+      "name": "Romantik"
+    },
+    {
+      "id": 3,
+      "name": "Bilim Kurgu"
+    },
+    {
+      "id": 4,
+      "name": "Komedi"
+    },
+    {
+      "id": 5,
+      "name": "Savaş"
+    }
   ]
 }

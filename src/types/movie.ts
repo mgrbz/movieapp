@@ -7,7 +7,7 @@ export interface IMovie{
   imageUrl: string;
   isPopular: boolean;
   categoryId: number;
-  // datePublished: Date;
+  datePublished: number;
 }
 
 export class Movie{
