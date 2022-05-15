@@ -4,20 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from './components/movies/movies.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieCreateComponent } from './components/movie-create/movie-create.component';
 
 const routes: Routes = [
-  {
-    path: 'movies', component: MoviesComponent
-  },
-  {
-    path: '', redirectTo: 'movies', pathMatch: 'full'
-  },
-  {
-    path: 'movies/category/:categoryId', component: MoviesComponent
-  },
-  {
-    path: 'movies/:movieId', component: MovieDetailsComponent
-  }
+  { path: 'movies', component: MoviesComponent },
+  { path: '', redirectTo: 'movies', pathMatch: 'full' },
+  { path: 'movies/category/:categoryId', component: MoviesComponent },
+  { path: 'movies/create', component: MovieCreateComponent },
+  { path: 'movies/:movieId', component: MovieDetailsComponent }
 ]
 
 @NgModule({

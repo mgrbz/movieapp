@@ -14,6 +14,7 @@ import { SummaryPipe } from 'src/pipes/summary.pipe';
 import { MovieFilterPipe } from 'src/pipes/moviefilter.pipe';
 import { AlertifyService } from 'src/services/alertify.service';
 import { AppRoutingModule } from './app-routing.module';
+import { MovieCreateComponent } from './components/movie-create/movie-create.component';
 
 @NgModule({
   declarations: [  //components
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     MovieComponent,
     MovieDetailsComponent,
     FooterComponent,
+    MovieCreateComponent,
     SummaryPipe,
     MovieFilterPipe
   ],
