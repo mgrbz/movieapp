@@ -22,6 +22,7 @@
   <div class="mb-3">
     <label for="categoryId" class="form-lbel">Category</label>
     <select #categoryId class="form-select">
+      <option [value]="-1">Seçiniz</option>
       <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
     </select>
   </div>
