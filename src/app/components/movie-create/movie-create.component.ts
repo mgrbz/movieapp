@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NgForm } from "@angular/forms";
+import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AlertifyService } from "src/services/alertify.service";
 import { CategoryService } from "src/services/category.service";
@@ -18,7 +18,6 @@ import { IMovie } from "src/types/movie";
 })
 export class MovieCreateComponent{
   error: string= ''
-  title: string = 'MovieC Create';
   categories: ICategory[] = [];
   formModel: IMovie = {
     id: 0,
@@ -29,6 +28,16 @@ export class MovieCreateComponent{
     categoryId: -1,
     datePublished: new Date().getTime()
   };
+  movieForm = new FormGroup({
+    title: new FormControl("", [Validators.required, Validators.minLength(5)]),
+    description: new FormControl("" ,[Validators.required]),
+    imageUrl: new FormControl(".jpeg" ,[Validators.required]),
+    categoryId: new FormControl("", [Validators.required])
+  })
+
+  get title(){
+    return this.movieForm.get('title')
+  }
 
   constructor(
     private movieCreateService: MovieCreateService,
@@ -43,20 +52,31 @@ export class MovieCreateComponent{
     })
   }
 
+
+  clearForm(){
+    
+    this.movieForm.patchValue({
+      title: '',
+      description: '',
+      imageUrl: '',
+      categoryId: ''
+    })
+  }
+
   createMovie() {
 
-    console.log('formModel', this.formModel)
-    this.movieCreateService.createMovie(this.formModel).subscribe(data => {
-        // this.router.navigate(['/movies']);
-        this.router.navigate([`/movies/${data.id}`]);
-      },
-      error => {
-        this.error = error
-      }
-    )
-
-
+    if(this.movieForm.valid){
+      console.log('testtset')
+      this.movieCreateService.createMovie(this.formModel).subscribe(data => {
+          this.router.navigate([`/movies/${data.id}`]);
+        },
+        error => {
+          this.error = error
+        }
+      )
+    }
   }
+
 
 
 }
