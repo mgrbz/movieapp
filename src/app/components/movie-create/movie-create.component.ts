@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ImageValidator } from "src/app/validators/image.validator";
 import { AlertifyService } from "src/services/alertify.service";
 import { CategoryService } from "src/services/category.service";
 import { MovieCreateService } from "src/services/movie-create.service";
@@ -22,7 +23,7 @@ export class MovieCreateComponent{
   movieForm = new FormGroup({
     title: new FormControl("", [Validators.required, Validators.minLength(5)]),
     description: new FormControl("" ,[Validators.required]),
-    imageUrl: new FormControl(".jpeg" ,[Validators.required]),
+    imageUrl: new FormControl(".jpeg" ,[Validators.required, ImageValidator.isValidExtention]),
     categoryId: new FormControl("", [Validators.required])
   })
 
