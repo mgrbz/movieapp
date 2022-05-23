@@ -19,15 +19,6 @@ import { IMovie } from "src/types/movie";
 export class MovieCreateComponent{
   error: string= ''
   categories: ICategory[] = [];
-  formModel: IMovie = {
-    id: 0,
-    title: "",
-    description: "",
-    imageUrl: "",
-    isPopular: false,
-    categoryId: -1,
-    datePublished: new Date().getTime()
-  };
   movieForm = new FormGroup({
     title: new FormControl("", [Validators.required, Validators.minLength(5)]),
     description: new FormControl("" ,[Validators.required]),
@@ -65,9 +56,19 @@ export class MovieCreateComponent{
 
   createMovie() {
 
+    let newMovie: IMovie = {
+      id: 0,
+      title: this.movieForm.value.title,
+      description: this.movieForm.value.description,
+      imageUrl: this.movieForm.value.imageUrl,
+      categoryId: this.movieForm.value.categoryId,
+      isPopular: false,
+      datePublished: new Date().getTime()
+    }
+
     if(this.movieForm.valid){
       console.log('testtset')
-      this.movieCreateService.createMovie(this.formModel).subscribe(data => {
+      this.movieCreateService.createMovie(newMovie).subscribe(data => {
           this.router.navigate([`/movies/${data.id}`]);
         },
         error => {

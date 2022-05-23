@@ -4,7 +4,7 @@
 <form [formGroup]="movieForm" >
 
   <div class="mb-3">
-    <label for="title" class="form-lbel">Title</label>
+    <label for="title" class="form-label">Title</label>
     <input minlength="5" type="text" name="title" class="form-control" formControlName="title" >
     <div class="alert alert-danger" *ngIf="movieForm.get('title')?.invalid && movieForm.get('title')?.touched" >
       <p *ngIf=" movieForm.get('title')?.errors?.['required']">gerekli alan!!!</p>
@@ -14,18 +14,18 @@
 
 
   <div class="mb-3">
-    <label for="description" class="form-lbel">Description</label>
+    <label for="description" class="form-label">Description</label>
     <textarea type="text" name="description" class="form-control" formControlName="description"></textarea>
 
   </div>
 
   <div class="mb-3">
-    <label for="imageUrl" class="form-lbel">Image Url</label>
+    <label for="imageUrl" class="form-label">Image Url</label>
     <input type="text" name="imageUrl" class="form-control" formControlName="imageUrl">
   </div>
 
   <div class="mb-3">
-    <label for="categoryId" class="form-lbel">Category</label>
+    <label for="categoryId" class="form-label">Category</label>
     <select class="form-select" name="categoryId" formControlName="categoryId">
       <option value="">Seçiniz</option>
       <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
